@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PCA Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <svg id="scatterplot" width="500" height="500"></svg>
+
+    <script>
+        // Generate random data
+        var data = [];
+        for (var i = 0; i < 50; i++) {
+            data.push({
+                PC1: Math.random() * 100,
+                PC2: Math.random() * 100
+            });
+        }
+
+        // Create scales for x and y axes
+        var xScale = d3.scaleLinear()
+            .domain([0, d3.max(data, d => d.PC1)])
+            .range([50, 450]);
+
+        var yScale = d3.scaleLinear()
+            .domain([0, d3.max(data, d => d.PC2)])
+            .range([450, 50]);
+
+        // Create SVG
+        var svg = d3.select("#scatterplot");
+
+        // Create circles for each data point
+        svg.selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("cx", d => xScale(d.PC1))
+            .attr("cy", d => yScale(d.PC2))
+            .attr("r", 5)
+            .attr("fill", "steelblue")
+            .attr("opacity", 0.7);
+
+        // Add axes
+        var xAxis = d3.axisBottom(xScale);
+        var yAxis = d3.axisLeft(yScale);
+        svg.append("g")
+            .attr("transform", "translate(0,450)")
+            .call(xAxis);
+
+        svg.append("g")
+            .attr("transform", "translate(50,0)")
+            .call(yAxis);
+    </script>
+</body>
+</html>

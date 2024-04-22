@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- India State Map  -->
+  <title>India Map</title>
+
+  <!--  Styles  -->
+  <link type="text/css" rel="stylesheet" href="zcolorbrewer.css" />
+  <link type="text/css" rel="stylesheet" href="d3_timeseries.css" />
+
+  <style type="text/css">
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    svg {
+      background: #f7f7f7;
+    }
+
+    #india {
+      /*    fill: #00BCD4;
+      opacity: .7; */
+      stroke: #101010;
+      stroke-width: .6;
+    }
+
+    div.tooltip {
+      position: absolute;
+      text-align: center;
+      padding: 0.5em;
+      font-size: 10px;
+      color: #222;
+      background: #FFF;
+      border-radius: 2px;
+      pointer-events: none;
+      box-shadow: 0px 0px 2px 0px #a6a6a6;
+    }
+
+    .key path {
+        display: none;
+    }
+
+    .key line {
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .key text {
+        font-size: 10px;
+    }
+
+    .key rect{
+      stroke-width: .4;
+    }
+
+    .bar {
+      fill: steelblue;
+    }
+
+    .selected {
+        fill: red;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="controls">
+    <!-- <label for="state">Select State:</label> -->
+    <!-- <select id="state"> -->
+      <!-- Add other state options here -->
+    <!-- </select> -->
+  
+    <label for="month">Select Month:</label>
+    <select id="month">
+      
+      <option value="2021-08" selected>August 2021</option>
+      <option value="2021-09">September 2021</option>
+      <option value="2021-10">October 2021</option>
+      <option value="2021-11">November 2021</option>
+      <option value="2021-12">December 2021</option>
+      <option value="2022-01">January 2022</option>
+      <option value="2022-02">February 2022</option>
+      <option value="2022-03">March 2022</option>
+      <option value="2022-04">April 2022</option>
+      <option value="2022-05">May 2022</option>
+      <option value="2022-06">June 2022</option>
+      <option value="2022-07">July 2022</option>
+      <option value="2022-08">August 2022</option>
+      <option value="2022-09">September 2022</option>
+      <option value="2022-10">October 2022</option>
+      <option value="2022-11">November 2022</option>
+      <option value="2022-12">December 2022</option>
+      <option value="2023-01">January 2023</option>
+      <option value="2023-02">February 2023</option>
+      <option value="2023-03">March 2023</option>
+      <option value="2023-04">April 2023</option>
+      <option value="2023-05">May 2023</option>
+      <option value="2023-06">June 2023</option>
+      <option value="2023-07">July 2023</option>
+      <!-- Add other month options here -->
+    </select>
+
+    <label for="pollutant">Select Pollutant:</label>
+  <select id="pollutant">
+    <option value="CO" selected>CO</option>
+    <option value="NO2">NO2</option>
+    <option value="SO2">SO2</option>
+    <option value="Ozone">Ozone</option>
+    <option value="PM2.5">PM2.5</option>
+    <option value="PM10">PM10</option>
+  </select>
+  </div>
+  
+
+  <div id="Mapchart" style="display: inline-block; margin-right: 20px;"></div>
+
+  <div class="timeseries">
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Time Series Analysis</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="d3_timeseries.css">
+</head>
+
+<body>
+    <div id="chart"></div>
+</body>
+
+</html>
+  </div>
+  <!-- <div id="bar-chart" style="display: inline-block; "></div> -->
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script>
+    d3v5 = window.d3;
+    window.d3 = null;
+    </script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script>
+    d3v3 = window.d3;
+    </script>
+
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+  <script type="text/javascript" src="d3.geo.min.js"></script>
+  <script type="text/javascript" src="map_plot.js"></script>
+  <script type="text/javascript" src="d3_timeseries.js"></script>
+  
+
+  <!-- <script type="text/javascript" src="mapppp.js"></script> -->
+  <!-- <script type="text/javascript" src="bar_graph.js"></script> -->
+
+</body>
+
+</html>
