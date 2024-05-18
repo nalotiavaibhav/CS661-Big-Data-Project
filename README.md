@@ -1,2 +1,2 @@
 ## CS661 Project
-### Interactive Air Quality Analysis Dashboard 
+### Visual Analytics on Air Pollutants in India
